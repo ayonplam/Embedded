@@ -1,0 +1,120 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out
+
+rule MAKEBROWSE
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out
+
+rule PDBLINK
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out
+
+
+
+#Build steps
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\queue\Src\queue.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\ExampleMKE16\lpuart\source\queue\Src\queue.c -xcl_file D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\queue\Src\queue.xcl -macro_file D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\queue\Src\queue.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\ExampleMKE16\lpuart\source\queue\Src\queue.c -D CPU_MKE16Z64VLF4 -o D$:\ExampleMKE16\lpuart\project\Debug\Obj\source\queue\Src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\ExampleMKE16\lpuart\project\..\CMSIS\Include\ -I D$:\ExampleMKE16\lpuart\project\..\MKE16Z4\ -I D$:\ExampleMKE16\lpuart\project\..\source\uart\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\uart\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\srec\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\srec\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\queue\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\queue\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\ -Ol --predef_macros D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\queue\Src\queue.tmp
+  rspfile_name = D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\queue\Src\queue.xcl.rsp
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\srec\Src\srec.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\ExampleMKE16\lpuart\source\srec\Src\srec.c -xcl_file D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\srec\Src\srec.xcl -macro_file D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\srec\Src\srec.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\ExampleMKE16\lpuart\source\srec\Src\srec.c -D CPU_MKE16Z64VLF4 -o D$:\ExampleMKE16\lpuart\project\Debug\Obj\source\srec\Src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\ExampleMKE16\lpuart\project\..\CMSIS\Include\ -I D$:\ExampleMKE16\lpuart\project\..\MKE16Z4\ -I D$:\ExampleMKE16\lpuart\project\..\source\uart\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\uart\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\srec\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\srec\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\queue\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\queue\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\ -Ol --predef_macros D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\srec\Src\srec.tmp
+  rspfile_name = D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\srec\Src\srec.xcl.rsp
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\clock_config.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\ExampleMKE16\lpuart\source\uart\Src\clock_config.c -xcl_file D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\clock_config.xcl -macro_file D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\clock_config.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\ExampleMKE16\lpuart\source\uart\Src\clock_config.c -D CPU_MKE16Z64VLF4 -o D$:\ExampleMKE16\lpuart\project\Debug\Obj\source\uart\Src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\ExampleMKE16\lpuart\project\..\CMSIS\Include\ -I D$:\ExampleMKE16\lpuart\project\..\MKE16Z4\ -I D$:\ExampleMKE16\lpuart\project\..\source\uart\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\uart\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\srec\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\srec\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\queue\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\queue\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\ -Ol --predef_macros D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\clock_config.tmp
+  rspfile_name = D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\clock_config.xcl.rsp
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\driver_lpuart.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\ExampleMKE16\lpuart\source\uart\Src\driver_lpuart.c -xcl_file D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\driver_lpuart.xcl -macro_file D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\driver_lpuart.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\ExampleMKE16\lpuart\source\uart\Src\driver_lpuart.c -D CPU_MKE16Z64VLF4 -o D$:\ExampleMKE16\lpuart\project\Debug\Obj\source\uart\Src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\ExampleMKE16\lpuart\project\..\CMSIS\Include\ -I D$:\ExampleMKE16\lpuart\project\..\MKE16Z4\ -I D$:\ExampleMKE16\lpuart\project\..\source\uart\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\uart\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\srec\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\srec\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\queue\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\queue\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\ -Ol --predef_macros D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\driver_lpuart.tmp
+  rspfile_name = D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\driver_lpuart.xcl.rsp
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\hal_lpuart.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\ExampleMKE16\lpuart\source\uart\Src\hal_lpuart.c -xcl_file D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\hal_lpuart.xcl -macro_file D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\hal_lpuart.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\ExampleMKE16\lpuart\source\uart\Src\hal_lpuart.c -D CPU_MKE16Z64VLF4 -o D$:\ExampleMKE16\lpuart\project\Debug\Obj\source\uart\Src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\ExampleMKE16\lpuart\project\..\CMSIS\Include\ -I D$:\ExampleMKE16\lpuart\project\..\MKE16Z4\ -I D$:\ExampleMKE16\lpuart\project\..\source\uart\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\uart\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\srec\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\srec\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\queue\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\queue\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\ -Ol --predef_macros D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\hal_lpuart.tmp
+  rspfile_name = D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\hal_lpuart.xcl.rsp
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\ExampleMKE16\lpuart\source\main.c -xcl_file D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\main.xcl -macro_file D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\main.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\ExampleMKE16\lpuart\source\main.c -D CPU_MKE16Z64VLF4 -o D$:\ExampleMKE16\lpuart\project\Debug\Obj\source --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\ExampleMKE16\lpuart\project\..\CMSIS\Include\ -I D$:\ExampleMKE16\lpuart\project\..\MKE16Z4\ -I D$:\ExampleMKE16\lpuart\project\..\source\uart\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\uart\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\srec\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\srec\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\queue\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\queue\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\ -Ol --predef_macros D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\main.tmp
+  rspfile_name = D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\main.xcl.rsp
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\middle.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\ExampleMKE16\lpuart\source\middle.c -xcl_file D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\middle.xcl -macro_file D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\middle.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\ExampleMKE16\lpuart\source\middle.c -D CPU_MKE16Z64VLF4 -o D$:\ExampleMKE16\lpuart\project\Debug\Obj\source --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\ExampleMKE16\lpuart\project\..\CMSIS\Include\ -I D$:\ExampleMKE16\lpuart\project\..\MKE16Z4\ -I D$:\ExampleMKE16\lpuart\project\..\source\uart\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\uart\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\srec\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\srec\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\queue\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\queue\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\ -Ol --predef_macros D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\middle.tmp
+  rspfile_name = D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\middle.xcl.rsp
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\startup\system_MKE16Z4.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\ExampleMKE16\lpuart\MKE16Z4\system_MKE16Z4.c -xcl_file D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\startup\system_MKE16Z4.xcl -macro_file D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\startup\system_MKE16Z4.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\ExampleMKE16\lpuart\MKE16Z4\system_MKE16Z4.c -D CPU_MKE16Z64VLF4 -o D$:\ExampleMKE16\lpuart\project\Debug\Obj\startup --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\ExampleMKE16\lpuart\project\..\CMSIS\Include\ -I D$:\ExampleMKE16\lpuart\project\..\MKE16Z4\ -I D$:\ExampleMKE16\lpuart\project\..\source\uart\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\uart\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\srec\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\srec\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\queue\Src\ -I D$:\ExampleMKE16\lpuart\project\..\source\queue\Inc\ -I D$:\ExampleMKE16\lpuart\project\..\source\ -Ol --predef_macros D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\startup\system_MKE16Z4.tmp
+  rspfile_name = D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\startup\system_MKE16Z4.xcl.rsp
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\queue\Src\queue.pbi : INDEXER D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\queue\Src\queue.xcl |  $
+D$:\ExampleMKE16\lpuart\source\queue\Src\queue.c
+  flags = -out=D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\queue\Src\queue.pbi -f D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\queue\Src\queue.xcl
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\srec\Src\srec.pbi : INDEXER D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\srec\Src\srec.xcl |  $
+D$:\ExampleMKE16\lpuart\source\srec\Src\srec.c
+  flags = -out=D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\srec\Src\srec.pbi -f D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\srec\Src\srec.xcl
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\clock_config.pbi : INDEXER D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\clock_config.xcl |  $
+D$:\ExampleMKE16\lpuart\source\uart\Src\clock_config.c
+  flags = -out=D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\clock_config.pbi -f D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\clock_config.xcl
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\driver_lpuart.pbi : INDEXER D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\driver_lpuart.xcl |  $
+D$:\ExampleMKE16\lpuart\source\uart\Src\driver_lpuart.c
+  flags = -out=D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\driver_lpuart.pbi -f D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\driver_lpuart.xcl
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\hal_lpuart.pbi : INDEXER D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\hal_lpuart.xcl |  $
+D$:\ExampleMKE16\lpuart\source\uart\Src\hal_lpuart.c
+  flags = -out=D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\hal_lpuart.pbi -f D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\hal_lpuart.xcl
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\main.pbi : INDEXER D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\main.xcl |  $
+D$:\ExampleMKE16\lpuart\source\main.c
+  flags = -out=D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\main.pbi -f D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\main.xcl
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\middle.pbi : INDEXER D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\middle.xcl |  $
+D$:\ExampleMKE16\lpuart\source\middle.c
+  flags = -out=D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\middle.pbi -f D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\middle.xcl
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\startup\system_MKE16Z4.pbi : INDEXER D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\startup\system_MKE16Z4.xcl |  $
+D$:\ExampleMKE16\lpuart\MKE16Z4\system_MKE16Z4.c
+  flags = -out=D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\startup\system_MKE16Z4.pbi -f D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\startup\system_MKE16Z4.xcl
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\lpuart.pbw : MAKEBROWSE D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\lpuart.pbd
+  flags = D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\lpuart.pbd -output D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\lpuart.pbw
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\lpuart_part0.pbi : PDBLINK D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\queue\Src\queue.pbi |  $
+D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\srec\Src\srec.pbi $
+D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\clock_config.pbi
+  flags = -M D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\lpuart_part0.pbi D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\queue\Src\queue.pbi D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\srec\Src\srec.pbi D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\clock_config.pbi
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\lpuart_part1.pbi : PDBLINK D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\driver_lpuart.pbi |  $
+D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\hal_lpuart.pbi $
+D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\main.pbi
+  flags = -M D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\lpuart_part1.pbi D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\driver_lpuart.pbi D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\uart\Src\hal_lpuart.pbi D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\main.pbi
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\lpuart_part2.pbi : PDBLINK D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\middle.pbi |  $
+D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\startup\system_MKE16Z4.pbi
+  flags = -M D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\lpuart_part2.pbi D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\source\middle.pbi D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\startup\system_MKE16Z4.pbi
+
+build D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\lpuart.pbd : PDBLINK D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\lpuart_part0.pbi |  $
+D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\lpuart_part1.pbi $
+D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\lpuart_part2.pbi
+  flags = -M D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\lpuart.pbd D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\lpuart_part0.pbi D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\lpuart_part1.pbi D$:\ExampleMKE16\lpuart\project\Debug\BrowseInfo\lpuart_part2.pbi
+

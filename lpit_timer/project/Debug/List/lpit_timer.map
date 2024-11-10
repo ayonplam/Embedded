@@ -1,0 +1,283 @@
+###############################################################################
+#
+# IAR ELF Linker V9.32.2.340/W64 for ARM                  25/May/2023  16:15:30
+# Copyright 2007-2023 IAR Systems AB.
+#
+#    Output file  =
+#        D:\ExampleMKE16\lpit_timer\project\Debug\Exe\lpit_timer.out
+#    Map file     =
+#        D:\ExampleMKE16\lpit_timer\project\Debug\List\lpit_timer.map
+#    Command line =
+#        -f D:\ExampleMKE16\lpit_timer\project\Debug\Exe\lpit_timer.out.rsp
+#        (D:\ExampleMKE16\lpit_timer\project\Debug\Obj\source\clock_config.o
+#        D:\ExampleMKE16\lpit_timer\project\Debug\Obj\source\driver_lpit.o
+#        D:\ExampleMKE16\lpit_timer\project\Debug\Obj\source\hal_lpit.o
+#        D:\ExampleMKE16\lpit_timer\project\Debug\Obj\source\main.o
+#        D:\ExampleMKE16\lpit_timer\project\Debug\Obj\startup\startup_MKE16Z4.o
+#        D:\ExampleMKE16\lpit_timer\project\Debug\Obj\startup\system_MKE16Z4.o
+#        --no_out_extension -o
+#        D:\ExampleMKE16\lpit_timer\project\Debug\Exe\lpit_timer.out --map
+#        D:\ExampleMKE16\lpit_timer\project\Debug\List\lpit_timer.map --config
+#        "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.1\arm/config/linker/NXP/MKE16Z64xxx4.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale --cpu=Cortex-M0+
+#        --fpu=None)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because --advanced_heap
+was not specified and the application did not appear to
+be primarily optimized for speed.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x3ff] |
+                [from 0x410 to 0xffff] { ro };
+define block CSTACK with size = 512, alignment = 8 { };
+define block PROC_STACK with size = 0, alignment = 8 { };
+define block HEAP with size = 2K, alignment = 8 { };
+"P2":  place in [from 0x1fff'f800 to 0x1fff'ffff] |
+                [from 0x2000'0000 to 0x2000'17ff] {
+          rw, block CSTACK, block PROC_STACK, block HEAP };
+"P3":  place in [from 0x400 to 0x40f] { section FlashConfig };
+
+No sections matched the following patterns:
+
+  rw  in "P2"
+
+
+  Section      Kind         Address   Size  Object
+  -------      ----         -------   ----  ------
+"A0":                                 0xc0
+  .intvec      ro code          0x0   0xc0  startup_MKE16Z4.o [2]
+                             - 0xc0   0xc0
+
+"P1", part 1 of 2:                   0x246
+  .text        ro code         0xc0  0x128  hal_lpit.o [1]
+  .text        ro code        0x1e8   0x80  clock_config.o [1]
+  .text        ro code        0x268   0x50  system_MKE16Z4.o [2]
+  .text        ro code        0x2b8    0x2  system_MKE16Z4.o [2]
+  .text        ro code        0x2ba    0x2  startup_MKE16Z4.o [2]
+  .text        ro code        0x2bc   0x28  startup_MKE16Z4.o [2]
+  .text        ro code        0x2e4   0x1e  cmain.o [4]
+  .text        ro code        0x302    0x4  low_level_init.o [3]
+                            - 0x306  0x246
+
+"P3":                                 0x10
+  FlashConfig  ro code        0x400   0x10  startup_MKE16Z4.o [2]
+                            - 0x410   0x10
+
+"P1", part 2 of 2:                   0x1bc
+  .text        ro code        0x410  0x120  driver_lpit.o [1]
+  .text        ro code        0x530   0x10  main.o [1]
+  .text        ro code        0x540    0x8  exit.o [3]
+  .text        ro code        0x548    0x2  startup_MKE16Z4.o [2]
+  .text        ro code        0x54c    0xa  cexit.o [4]
+  .text        ro code        0x556    0x2  startup_MKE16Z4.o [2]
+  .text        ro code        0x558   0x14  exit.o [5]
+  .text        ro code        0x56c   0x1c  cstartup_M.o [4]
+  .text        ro code        0x588    0x8  startup_MKE16Z4.o [2]
+  .text        ro code        0x590    0x8  startup_MKE16Z4.o [2]
+  .text        ro code        0x598    0x8  startup_MKE16Z4.o [2]
+  .text        ro code        0x5a0    0x8  startup_MKE16Z4.o [2]
+  .text        ro code        0x5a8    0x8  startup_MKE16Z4.o [2]
+  .text        ro code        0x5b0    0x8  startup_MKE16Z4.o [2]
+  .text        ro code        0x5b8    0x8  startup_MKE16Z4.o [2]
+  .text        ro code        0x5c0    0x8  startup_MKE16Z4.o [2]
+  .text        ro code        0x5c8    0x2  startup_MKE16Z4.o [2]
+  .text        ro code        0x5ca    0x2  startup_MKE16Z4.o [2]
+                            - 0x5cc  0x1bc
+
+"P2":                                0x200
+  CSTACK                0x1fff'f800  0x200  <Block>
+    CSTACK     uninit   0x1fff'f800  0x200  <Block tail>
+                      - 0x1fff'fa00  0x200
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+        0x306        0x3ff    0xfa
+        0x5cc       0xffff  0xfa34
+  0x1fff'fa00  0x1fff'ffff   0x600
+  0x2000'0000  0x2000'17ff  0x1800
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module             ro code  rw data
+    ------             -------  -------
+command line/config:
+    -----------------------------------
+    Total:
+
+D:\ExampleMKE16\lpit_timer\project\Debug\Obj\source: [1]
+    clock_config.o         128
+    driver_lpit.o          288
+    hal_lpit.o             296
+    main.o                  16
+    -----------------------------------
+    Total:                 728
+
+D:\ExampleMKE16\lpit_timer\project\Debug\Obj\startup: [2]
+    startup_MKE16Z4.o      322
+    system_MKE16Z4.o        82
+    -----------------------------------
+    Total:                 404
+
+dl6M_tln.a: [3]
+    exit.o                   8
+    low_level_init.o         4
+    -----------------------------------
+    Total:                  12
+
+rt6M_tl.a: [4]
+    cexit.o                 10
+    cmain.o                 30
+    cstartup_M.o            28
+    -----------------------------------
+    Total:                  68
+
+shb_l.a: [5]
+    exit.o                  20
+    -----------------------------------
+    Total:                  20
+
+    Gaps                     2
+    Linker created                  512
+---------------------------------------
+    Grand Total:         1'234      512
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address  Size  Type      Object
+-----                       -------  ----  ----      ------
+?main                         0x2e5        Code  Gb  cmain.o [4]
+ADC0_IRQHandler               0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+CMP0_IRQHandler               0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+CSTACK$$Base            0x1fff'f800         --   Gb  - Linker created -
+CSTACK$$Limit           0x1fff'fa00         --   Gb  - Linker created -
+DefaultISR                    0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+FTFA_IRQHandler               0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+FTM0_IRQHandler               0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+FTM1_IRQHandler               0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+GPIO_SetPinOutput              0xe1   0xc  Code  Gb  hal_lpit.o [1]
+GPIO_SetPinState               0xed  0x20  Code  Gb  hal_lpit.o [1]
+GPIO_TogglePinOutput          0x10d   0xc  Code  Gb  hal_lpit.o [1]
+HardFault_Handler             0x549        Code  Wk  startup_MKE16Z4.o [2]
+LPI2C0_DriverIRQHandler
+                              0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+LPI2C0_IRQHandler             0x589        Code  Wk  startup_MKE16Z4.o [2]
+LPIT0_IRQHandler              0x4f9  0x1e  Code  Gb  driver_lpit.o [1]
+LPIT_ClearInterruptFlag
+                              0x1bd  0x20  Code  Gb  hal_lpit.o [1]
+LPIT_DisableInterrupts        0x191  0x20  Code  Gb  hal_lpit.o [1]
+LPIT_EnableInterrupts         0x171  0x20  Code  Gb  hal_lpit.o [1]
+LPIT_SetChannelChain          0x123  0x22  Code  Gb  hal_lpit.o [1]
+LPIT_SetOperation             0x119   0xa  Code  Gb  hal_lpit.o [1]
+LPIT_SetTimerMode             0x145  0x22  Code  Gb  hal_lpit.o [1]
+LPIT_SetTimerPeriod           0x167   0xa  Code  Gb  hal_lpit.o [1]
+LPIT_StartTimer               0x1b1   0xc  Code  Gb  hal_lpit.o [1]
+LPIT_initClockSource          0x46f  0x26  Code  Gb  driver_lpit.o [1]
+LPSPI0_DriverIRQHandler
+                              0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+LPSPI0_IRQHandler             0x591        Code  Wk  startup_MKE16Z4.o [2]
+LPUART0_DriverIRQHandler
+                              0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+LPUART0_IRQHandler            0x599        Code  Wk  startup_MKE16Z4.o [2]
+LPUART1_DriverIRQHandler
+                              0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+LPUART1_IRQHandler            0x5a1        Code  Wk  startup_MKE16Z4.o [2]
+LPUART2_DriverIRQHandler
+                              0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+LPUART2_IRQHandler            0x5a9        Code  Wk  startup_MKE16Z4.o [2]
+LVD_LVW_IRQHandler            0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+MSCAN_DriverIRQHandler        0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+MSCAN_ORed_IRQHandler         0x5b9        Code  Wk  startup_MKE16Z4.o [2]
+MSCAN_Rx_IRQHandler           0x5b1        Code  Wk  startup_MKE16Z4.o [2]
+NMI_Handler                   0x2bb        Code  Wk  startup_MKE16Z4.o [2]
+PCC_PCSConfig                 0x1fb  0x32  Code  Gb  clock_config.o [1]
+PDB0_IRQHandler               0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+PORTAE_IRQHandler             0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+PORTBCD_IRQHandler            0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+PWT_LPTMR0_IRQHandler         0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+PendSV_Handler                0x5c9        Code  Wk  startup_MKE16Z4.o [2]
+Port_ClockEnable              0x1e9  0x12  Code  Gb  clock_config.o [1]
+Port_SetPinMux                 0xc1  0x20  Code  Gb  hal_lpit.o [1]
+RTC_IRQHandler                0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+Region$$Table$$Base             0x0         --   Gb  - Linker created -
+Region$$Table$$Limit            0x0         --   Gb  - Linker created -
+Reserved16_IRQHandler         0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+Reserved17_IRQHandler         0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+Reserved18_IRQHandler         0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+Reserved19_IRQHandler         0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+Reserved20_IRQHandler         0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+Reserved25_IRQHandler         0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+Reserved27_IRQHandler         0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+Reserved35_IRQHandler         0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+Reserved37_IRQHandler         0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+Reserved39_IRQHandler         0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+Reset_Handler                 0x2bd        Code  Wk  startup_MKE16Z4.o [2]
+SCG_RCM_IRQHandler            0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+SIRC_DividerConfig            0x22d  0x10  Code  Gb  clock_config.o [1]
+SIRC_Enable                   0x24b   0xc  Code  Gb  clock_config.o [1]
+SIRC_RangeConfig              0x23d   0xe  Code  Gb  clock_config.o [1]
+SVC_Handler                   0x557        Code  Wk  startup_MKE16Z4.o [2]
+SysTick_Handler               0x5cb        Code  Wk  startup_MKE16Z4.o [2]
+SystemInit                    0x269  0x34  Code  Gb  system_MKE16Z4.o [2]
+SystemInitHook                0x2b9   0x2  Code  Wk  system_MKE16Z4.o [2]
+TSI_IRQHandler                0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+WDOG_EWM_IRQHandler           0x5c1        Code  Wk  startup_MKE16Z4.o [2]
+__NVIC_EnableIRQ              0x411  0x18  Code  Lc  driver_lpit.o [1]
+__Vectors                       0x0         --   Gb  startup_MKE16Z4.o [2]
+__Vectors_End                  0xc0        Data  Gb  startup_MKE16Z4.o [2]
+__Vectors_Size {Abs}           0xc0         --   Gb  startup_MKE16Z4.o [2]
+__cmain                       0x2e5        Code  Gb  cmain.o [4]
+__exit                        0x559  0x14  Code  Gb  exit.o [5]
+__iar_program_start           0x56d        Code  Gb  cstartup_M.o [4]
+__low_level_init              0x303   0x4  Code  Gb  low_level_init.o [3]
+__vector_table                  0x0        Data  Gb  startup_MKE16Z4.o [2]
+__vector_table_0x1c            0x1c        Data  Gb  startup_MKE16Z4.o [2]
+_call_main                    0x2f1        Code  Gb  cmain.o [4]
+_exit                         0x54d        Code  Gb  cexit.o [4]
+exit                          0x541   0x8  Code  Gb  exit.o [3]
+initLPIT0                     0x495  0x64  Code  Gb  driver_lpit.o [1]
+initLedRGB                    0x429  0x46  Code  Gb  driver_lpit.o [1]
+main                          0x531  0x10  Code  Gb  main.o [1]
+
+
+[1] = D:\ExampleMKE16\lpit_timer\project\Debug\Obj\source
+[2] = D:\ExampleMKE16\lpit_timer\project\Debug\Obj\startup
+[3] = dl6M_tln.a
+[4] = rt6M_tl.a
+[5] = shb_l.a
+
+  1'234 bytes of readonly  code memory
+    512 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

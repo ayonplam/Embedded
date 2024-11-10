@@ -1,0 +1,18 @@
+D:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\driver_lpit.pbi: \
+  D:\ExampleMKE16\lpit_timer\source\driver_lpit.c \
+  D:\ExampleMKE16\lpit_timer\source\driver_lpit.h \
+  D:\ExampleMKE16\lpit_timer\source\hal_lpit.h \
+  D:\ExampleMKE16\lpit_timer\project\..\MKE16Z4\MKE16Z4.h \
+  D:\ExampleMKE16\lpit_timer\project\..\CMSIS\Include\core_cm0plus.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\stdint.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\ycheck.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\yvals.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\DLib_Config_Normal.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\DLib_Product.h \
+  D:\ExampleMKE16\lpit_timer\project\..\CMSIS\Include\cmsis_version.h \
+  D:\ExampleMKE16\lpit_timer\project\..\CMSIS\Include\cmsis_compiler.h \
+  D:\ExampleMKE16\lpit_timer\project\..\CMSIS\Include\cmsis_iccarm.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\aarch32\iccarm_builtin.h \
+  D:\ExampleMKE16\lpit_timer\project\..\MKE16Z4\system_MKE16Z4.h \
+  D:\ExampleMKE16\lpit_timer\source\clock_config.h

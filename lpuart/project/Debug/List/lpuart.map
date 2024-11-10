@@ -1,0 +1,388 @@
+###############################################################################
+#
+# IAR ELF Linker V9.32.2.340/W64 for ARM                  01/Jun/2023  16:15:57
+# Copyright 2007-2023 IAR Systems AB.
+#
+#    Output file  =  D:\ExampleMKE16\lpuart\project\Debug\Exe\lpuart.out
+#    Map file     =  D:\ExampleMKE16\lpuart\project\Debug\List\lpuart.map
+#    Command line =
+#        -f D:\ExampleMKE16\lpuart\project\Debug\Exe\lpuart.out.rsp
+#        (D:\ExampleMKE16\lpuart\project\Debug\Obj\source\uart\Src\clock_config.o
+#        D:\ExampleMKE16\lpuart\project\Debug\Obj\source\uart\Src\driver_lpuart.o
+#        D:\ExampleMKE16\lpuart\project\Debug\Obj\source\uart\Src\hal_lpuart.o
+#        D:\ExampleMKE16\lpuart\project\Debug\Obj\source\main.o
+#        D:\ExampleMKE16\lpuart\project\Debug\Obj\source\queue\Src\queue.o
+#        D:\ExampleMKE16\lpuart\project\Debug\Obj\source\srec\Src\srec.o
+#        D:\ExampleMKE16\lpuart\project\Debug\Obj\startup\startup_MKE16Z4.o
+#        D:\ExampleMKE16\lpuart\project\Debug\Obj\startup\system_MKE16Z4.o
+#        --no_out_extension -o
+#        D:\ExampleMKE16\lpuart\project\Debug\Exe\lpuart.out --map
+#        D:\ExampleMKE16\lpuart\project\Debug\List\lpuart.map --config
+#        "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.1\arm/config/linker/NXP/MKE16Z64xxx4.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale --cpu=Cortex-M0+
+#        --fpu=None)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because --advanced_heap
+was not specified and the application did not appear to
+be primarily optimized for speed.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x3ff] |
+                [from 0x410 to 0xffff] { ro };
+define block CSTACK with size = 512, alignment = 8 { };
+define block PROC_STACK with size = 0, alignment = 8 { };
+define block HEAP with size = 2K, alignment = 8 { };
+"P2":  place in [from 0x1fff'f800 to 0x1fff'ffff] |
+                [from 0x2000'0000 to 0x2000'17ff] {
+          rw, block CSTACK, block PROC_STACK, block HEAP };
+"P3":  place in [from 0x400 to 0x40f] { section FlashConfig };
+initialize by copy { rw };
+
+  Section            Kind         Address   Size  Object
+  -------            ----         -------   ----  ------
+"A0":                                       0xc0
+  .intvec            ro code          0x0   0xc0  startup_MKE16Z4.o [5]
+                                   - 0xc0   0xc0
+
+"P1", part 1 of 2:                         0x144
+  .text              ro code         0xc0    0x2  startup_MKE16Z4.o [5]
+  .text              ro code         0xc4   0x34  ABImemcpy.o [7]
+  .text              ro code         0xf8   0x4e  ABImemset.o [7]
+  .text              ro code        0x146    0x2  startup_MKE16Z4.o [5]
+  .text              ro code        0x148   0x60  clock_config.o [4]
+  .text              ro code        0x1a8    0x2  startup_MKE16Z4.o [5]
+  .text              ro code        0x1ac    0x2  IntDivZer.o [7]
+  .text              ro code        0x1ae    0x2  startup_MKE16Z4.o [5]
+  .text              ro code        0x1b0   0x50  system_MKE16Z4.o [5]
+  Initializer bytes  const          0x200    0x4  <for P2 s0>
+                                  - 0x204  0x144
+
+"P3":                                       0x10
+  FlashConfig        ro code        0x400   0x10  startup_MKE16Z4.o [5]
+                                  - 0x410   0x10
+
+"P1", part 2 of 2:                         0x9f0
+  .text              ro code        0x410  0x30e  srec.o [3]
+  .text              ro code        0x720  0x160  driver_lpuart.o [4]
+  .text              ro code        0x880   0xec  hal_lpuart.o [4]
+  .text              ro code        0x96c   0xae  I32DivModFast.o [7]
+  .text              ro code        0xa1c  0x104  queue.o [2]
+  .text              ro code        0xb20   0xfc  main.o [1]
+  .text              ro code        0xc1c    0x2  system_MKE16Z4.o [5]
+  .text              ro code        0xc1e   0x3c  zero_init3.o [7]
+  .text              ro code        0xc5a   0x30  copy_init3.o [7]
+  .text              ro code        0xc8a    0x2  startup_MKE16Z4.o [5]
+  .text              ro code        0xc8c   0x28  startup_MKE16Z4.o [5]
+  .text              ro code        0xcb4   0x28  data_init.o [7]
+  .iar.init_table    const          0xcdc   0x24  - Linker created -
+  .text              ro code        0xd00   0x1e  cmain.o [7]
+  .text              ro code        0xd1e    0x4  low_level_init.o [6]
+  .text              ro code        0xd22    0x8  exit.o [6]
+  .text              ro code        0xd2c    0xa  cexit.o [7]
+  .text              ro code        0xd38   0x14  exit.o [8]
+  .text              ro code        0xd4c   0x1c  cstartup_M.o [7]
+  .rodata            const          0xd68   0x10  main.o [1]
+  .rodata            const          0xd78   0x10  queue.o [2]
+  .rodata            const          0xd88    0xc  main.o [1]
+  .rodata            const          0xd94    0xc  main.o [1]
+  .rodata            const          0xda0    0xc  main.o [1]
+  .rodata            const          0xdac    0x8  main.o [1]
+  .text              ro code        0xdb4    0x8  startup_MKE16Z4.o [5]
+  .text              ro code        0xdbc    0x8  startup_MKE16Z4.o [5]
+  .text              ro code        0xdc4    0x8  startup_MKE16Z4.o [5]
+  .text              ro code        0xdcc    0x8  startup_MKE16Z4.o [5]
+  .text              ro code        0xdd4    0x8  startup_MKE16Z4.o [5]
+  .text              ro code        0xddc    0x8  startup_MKE16Z4.o [5]
+  .text              ro code        0xde4    0x8  startup_MKE16Z4.o [5]
+  .rodata            const          0xdec    0x4  main.o [1]
+  .rodata            const          0xdf0    0x4  main.o [1]
+  .rodata            const          0xdf4    0x4  main.o [1]
+  .rodata            const          0xdf8    0x4  main.o [1]
+  .rodata            const          0xdfc    0x4  main.o [1]
+  .rodata            const          0xe00    0x0  zero_init3.o [7]
+  .rodata            const          0xe00    0x0  copy_init3.o [7]
+                                  - 0xe00  0x9f0
+
+"P2", part 1 of 3:                           0x4
+  P2 s0                       0x1fff'f800    0x4  <Init block>
+    .data            inited   0x1fff'f800    0x1  main.o [1]
+                            - 0x1fff'f804    0x4
+
+"P2", part 2 of 3:                         0x514
+  .bss               zero     0x1fff'f804  0x408  main.o [1]
+  .bss               zero     0x1fff'fc0c  0x108  main.o [1]
+  .bss               zero     0x1fff'fd14    0x4  main.o [1]
+                            - 0x1fff'fd18  0x514
+
+"P2", part 3 of 3:                         0x200
+  CSTACK                      0x1fff'fd18  0x200  <Block>
+    CSTACK           uninit   0x1fff'fd18  0x200  <Block tail>
+                            - 0x1fff'ff18  0x200
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+        0x204        0x3ff   0x1fc
+        0xe00       0xffff  0xf200
+  0x1fff'ff18  0x1fff'ffff    0xe8
+  0x2000'0000  0x2000'17ff  0x1800
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x514:
+          0x1fff'f804  0x514
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x4 (400% of destination):
+                0x200    0x4
+    1 destination range, total size 0x1:
+          0x1fff'f800    0x1
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module             ro code  ro data  rw data
+    ------             -------  -------  -------
+command line/config:
+    --------------------------------------------
+    Total:
+
+D:\ExampleMKE16\lpuart\project\Debug\Obj\source: [1]
+    main.o                 252       81    1'301
+    --------------------------------------------
+    Total:                 252       81    1'301
+
+D:\ExampleMKE16\lpuart\project\Debug\Obj\source\queue\Src: [2]
+    queue.o                260       16
+    --------------------------------------------
+    Total:                 260       16
+
+D:\ExampleMKE16\lpuart\project\Debug\Obj\source\srec\Src: [3]
+    srec.o                 782
+    --------------------------------------------
+    Total:                 782
+
+D:\ExampleMKE16\lpuart\project\Debug\Obj\source\uart\Src: [4]
+    clock_config.o          96
+    driver_lpuart.o        352
+    hal_lpuart.o           236
+    --------------------------------------------
+    Total:                 684
+
+D:\ExampleMKE16\lpuart\project\Debug\Obj\startup: [5]
+    startup_MKE16Z4.o      314
+    system_MKE16Z4.o        82
+    --------------------------------------------
+    Total:                 396
+
+dl6M_tln.a: [6]
+    exit.o                   8
+    low_level_init.o         4
+    --------------------------------------------
+    Total:                  12
+
+rt6M_tl.a: [7]
+    ABImemcpy.o             52
+    ABImemset.o             78
+    I32DivModFast.o        174
+    IntDivZer.o              2
+    cexit.o                 10
+    cmain.o                 30
+    copy_init3.o            48
+    cstartup_M.o            28
+    data_init.o             40
+    zero_init3.o            60
+    --------------------------------------------
+    Total:                 522
+
+shb_l.a: [8]
+    exit.o                  20
+    --------------------------------------------
+    Total:                  20
+
+    Gaps                    12
+    Linker created                   39      512
+------------------------------------------------
+    Grand Total:         2'940      136    1'813
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base         0xcdc          --   Gb  - Linker created -
+.iar.init_table$$Limit        0xd00          --   Gb  - Linker created -
+?main                         0xd01         Code  Gb  cmain.o [7]
+ADC0_IRQHandler               0xde5         Code  Wk  startup_MKE16Z4.o [5]
+CMP0_IRQHandler               0xde5         Code  Wk  startup_MKE16Z4.o [5]
+CSTACK$$Base            0x1fff'fd18          --   Gb  - Linker created -
+CSTACK$$Limit           0x1fff'ff18          --   Gb  - Linker created -
+Caculate_OSR_SBR              0x7a7   0x78  Code  Gb  driver_lpuart.o [4]
+DefaultISR                    0xde5         Code  Wk  startup_MKE16Z4.o [5]
+FIRC_DividerConfig            0x18d   0x14  Code  Gb  clock_config.o [4]
+FTFA_IRQHandler               0xde5         Code  Wk  startup_MKE16Z4.o [5]
+FTM0_IRQHandler               0xde5         Code  Wk  startup_MKE16Z4.o [5]
+FTM1_IRQHandler               0xde5         Code  Wk  startup_MKE16Z4.o [5]
+HardFault_Handler             0x147         Code  Wk  startup_MKE16Z4.o [5]
+LPI2C0_DriverIRQHandler
+                              0xde5         Code  Wk  startup_MKE16Z4.o [5]
+LPI2C0_IRQHandler             0xdb5         Code  Wk  startup_MKE16Z4.o [5]
+LPIT0_IRQHandler              0xde5         Code  Wk  startup_MKE16Z4.o [5]
+LPSPI0_DriverIRQHandler
+                              0xde5         Code  Wk  startup_MKE16Z4.o [5]
+LPSPI0_IRQHandler             0xdbd         Code  Wk  startup_MKE16Z4.o [5]
+LPUART0_ConfigClockSource
+                              0x739   0x12  Code  Gb  driver_lpuart.o [4]
+LPUART0_DriverIRQHandler
+                              0xde5         Code  Wk  startup_MKE16Z4.o [5]
+LPUART0_IRQHandler            0xbc5   0x12  Code  Gb  main.o [1]
+LPUART0_Init                  0x74b   0x5c  Code  Gb  driver_lpuart.o [4]
+LPUART0_InitPin               0x84b   0x20  Code  Gb  driver_lpuart.o [4]
+LPUART0_Read                  0x843    0x8  Code  Gb  driver_lpuart.o [4]
+LPUART0_Write                 0x81f   0x24  Code  Gb  driver_lpuart.o [4]
+LPUART1_DriverIRQHandler
+                              0xde5         Code  Wk  startup_MKE16Z4.o [5]
+LPUART1_IRQHandler            0xdc5         Code  Wk  startup_MKE16Z4.o [5]
+LPUART2_DriverIRQHandler
+                              0xde5         Code  Wk  startup_MKE16Z4.o [5]
+LPUART2_IRQHandler            0xdcd         Code  Wk  startup_MKE16Z4.o [5]
+LPUART_DisableRXTX            0x8a1    0xa  Code  Gb  hal_lpuart.o [4]
+LPUART_EnableRXTX             0x8ab    0xc  Code  Gb  hal_lpuart.o [4]
+LPUART_EnableReceiverInterrupt
+                              0x961    0xc  Code  Gb  hal_lpuart.o [4]
+LPUART_Set8BitMode            0x943   0x12  Code  Gb  hal_lpuart.o [4]
+LPUART_SetBaudrate            0x8b7   0x34  Code  Gb  hal_lpuart.o [4]
+LPUART_SetFirstBit            0x91f   0x12  Code  Gb  hal_lpuart.o [4]
+LPUART_SetInverseTX           0x90d   0x12  Code  Gb  hal_lpuart.o [4]
+LPUART_SetParity              0x8eb   0x22  Code  Gb  hal_lpuart.o [4]
+LPUART_SetStopBit             0x931   0x12  Code  Gb  hal_lpuart.o [4]
+LVD_LVW_IRQHandler            0xde5         Code  Wk  startup_MKE16Z4.o [5]
+MSCAN_DriverIRQHandler        0xde5         Code  Wk  startup_MKE16Z4.o [5]
+MSCAN_ORed_IRQHandler         0xddd         Code  Wk  startup_MKE16Z4.o [5]
+MSCAN_Rx_IRQHandler           0xdd5         Code  Wk  startup_MKE16Z4.o [5]
+NMI_Handler                    0xc1         Code  Wk  startup_MKE16Z4.o [5]
+PCC_ClockEnable               0x149   0x12  Code  Gb  clock_config.o [4]
+PCC_PCSConfig                 0x15b   0x32  Code  Gb  clock_config.o [4]
+PDB0_IRQHandler               0xde5         Code  Wk  startup_MKE16Z4.o [5]
+PORTAE_IRQHandler             0xde5         Code  Wk  startup_MKE16Z4.o [5]
+PORTBCD_IRQHandler            0xde5         Code  Wk  startup_MKE16Z4.o [5]
+PWT_LPTMR0_IRQHandler         0xde5         Code  Wk  startup_MKE16Z4.o [5]
+PendSV_Handler                0x1af         Code  Wk  startup_MKE16Z4.o [5]
+Port_SetPinMux                0x881   0x20  Code  Gb  hal_lpuart.o [4]
+RTC_IRQHandler                0xde5         Code  Wk  startup_MKE16Z4.o [5]
+Region$$Table$$Base           0xcdc          --   Gb  - Linker created -
+Region$$Table$$Limit          0xd00          --   Gb  - Linker created -
+Reserved16_IRQHandler         0xde5         Code  Wk  startup_MKE16Z4.o [5]
+Reserved17_IRQHandler         0xde5         Code  Wk  startup_MKE16Z4.o [5]
+Reserved18_IRQHandler         0xde5         Code  Wk  startup_MKE16Z4.o [5]
+Reserved19_IRQHandler         0xde5         Code  Wk  startup_MKE16Z4.o [5]
+Reserved20_IRQHandler         0xde5         Code  Wk  startup_MKE16Z4.o [5]
+Reserved25_IRQHandler         0xde5         Code  Wk  startup_MKE16Z4.o [5]
+Reserved27_IRQHandler         0xde5         Code  Wk  startup_MKE16Z4.o [5]
+Reserved35_IRQHandler         0xde5         Code  Wk  startup_MKE16Z4.o [5]
+Reserved37_IRQHandler         0xde5         Code  Wk  startup_MKE16Z4.o [5]
+Reserved39_IRQHandler         0xde5         Code  Wk  startup_MKE16Z4.o [5]
+Reset_Handler                 0xc8d         Code  Wk  startup_MKE16Z4.o [5]
+SCG_RCM_IRQHandler            0xde5         Code  Wk  startup_MKE16Z4.o [5]
+SVC_Handler                   0x1a9         Code  Wk  startup_MKE16Z4.o [5]
+SysTick_Handler               0xc8b         Code  Wk  startup_MKE16Z4.o [5]
+SystemInit                    0x1b1   0x34  Code  Gb  system_MKE16Z4.o [5]
+SystemInitHook                0xc1d    0x2  Code  Wk  system_MKE16Z4.o [5]
+TSI_IRQHandler                0xde5         Code  Wk  startup_MKE16Z4.o [5]
+WDOG_EWM_IRQHandler           0xde5         Code  Wk  startup_MKE16Z4.o [5]
+__NVIC_EnableIRQ              0x721   0x18  Code  Lc  driver_lpuart.o [4]
+__Vectors                       0x0          --   Gb  startup_MKE16Z4.o [5]
+__Vectors_End                  0xc0         Data  Gb  startup_MKE16Z4.o [5]
+__Vectors_Size {Abs}           0xc0          --   Gb  startup_MKE16Z4.o [5]
+__aeabi_idiv0                 0x1ad         Code  Gb  IntDivZer.o [7]
+__aeabi_memcpy4                0xc5         Code  Gb  ABImemcpy.o [7]
+__aeabi_memcpy8                0xc5         Code  Gb  ABImemcpy.o [7]
+__aeabi_memset                 0xf9         Code  Gb  ABImemset.o [7]
+__aeabi_uidiv                 0x96d         Code  Gb  I32DivModFast.o [7]
+__aeabi_uidivmod              0x96d         Code  Gb  I32DivModFast.o [7]
+__cmain                       0xd01         Code  Gb  cmain.o [7]
+__exit                        0xd39   0x14  Code  Gb  exit.o [8]
+__iar_Memset4_word            0x119         Code  Gb  ABImemset.o [7]
+__iar_Memset_word             0x105         Code  Gb  ABImemset.o [7]
+__iar_copy_init3              0xc5b   0x30  Code  Gb  copy_init3.o [7]
+__iar_data_init3              0xcb5   0x28  Code  Gb  data_init.o [7]
+__iar_program_start           0xd4d         Code  Gb  cstartup_M.o [7]
+__iar_zero_init3              0xc1f   0x3c  Code  Gb  zero_init3.o [7]
+__low_level_init              0xd1f    0x4  Code  Gb  low_level_init.o [6]
+__vector_table                  0x0         Data  Gb  startup_MKE16Z4.o [5]
+__vector_table_0x1c            0x1c         Data  Gb  startup_MKE16Z4.o [5]
+_call_main                    0xd0d         Code  Gb  cmain.o [7]
+_exit                         0xd2d         Code  Gb  cexit.o [7]
+badCount                      0xda0    0xc  Data  Lc  main.o [1]
+badFormat                     0xd88    0xc  Data  Lc  main.o [1]
+badRecord                     0xd94    0xc  Data  Lc  main.o [1]
+badSum                        0xd68   0x10  Data  Lc  main.o [1]
+exit                          0xd23    0x8  Code  Gb  exit.o [6]
+full                          0xd78   0x10  Data  Lc  queue.o [2]
+hex                           0x411   0x36  Code  Lc  srec.o [3]
+main                          0xb21   0xa4  Code  Gb  main.o [1]
+myOSR_SBR               0x1fff'fd14    0x4  Data  Lc  main.o [1]
+myRingBuffer            0x1fff'f804  0x408  Data  Lc  main.o [1]
+no_error                0x1fff'f800    0x1  Data  Gb  main.o [1]
+parse_record                  0x447  0x2d8  Code  Gb  srec.o [3]
+rec                     0x1fff'fc0c  0x108  Data  Lc  main.o [1]
+ring_buff_init                0xaef   0x1c  Code  Gb  queue.o [2]
+ring_buff_pop                 0xa9d   0x52  Code  Gb  queue.o [2]
+ring_buff_push                0xa1d   0x80  Code  Gb  queue.o [2]
+s1                            0xdec    0x4  Data  Lc  main.o [1]
+s2                            0xdf0    0x4  Data  Lc  main.o [1]
+s3                            0xdf4    0x4  Data  Lc  main.o [1]
+s4                            0xdf8    0x4  Data  Lc  main.o [1]
+s5                            0xdfc    0x4  Data  Lc  main.o [1]
+success                       0xdac    0x8  Data  Lc  main.o [1]
+
+
+[1] = D:\ExampleMKE16\lpuart\project\Debug\Obj\source
+[2] = D:\ExampleMKE16\lpuart\project\Debug\Obj\source\queue\Src
+[3] = D:\ExampleMKE16\lpuart\project\Debug\Obj\source\srec\Src
+[4] = D:\ExampleMKE16\lpuart\project\Debug\Obj\source\uart\Src
+[5] = D:\ExampleMKE16\lpuart\project\Debug\Obj\startup
+[6] = dl6M_tln.a
+[7] = rt6M_tl.a
+[8] = shb_l.a
+
+  2'940 bytes of readonly  code memory
+    136 bytes of readonly  data memory
+  1'813 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

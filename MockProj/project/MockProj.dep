@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>5</fileVersion>
+    <fileChecksum>978968073</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\..\source\MiddleWare\queue\queue.h</file>
+            <file>$PROJ_DIR$\..\source\ClockConfig\clock_config.c</file>
+            <file>$PROJ_DIR$\..\source\MiddleWare\queue\queue.c</file>
+            <file>$PROJ_DIR$\..\source\button\hal_button.h</file>
+            <file>$PROJ_DIR$\..\source\uart\hal_lpuart.h</file>
+            <file>$PROJ_DIR$\..\source\MiddleWare\srec\srec.c</file>
+            <file>$PROJ_DIR$\..\source\MiddleWare\common.h</file>
+            <file>$PROJ_DIR$\..\source\uart\hal_lpuart.c</file>
+            <file>$PROJ_DIR$\..\source\Bootloader\bootloader.h</file>
+            <file>$PROJ_DIR$\..\source\main.c</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$PROJ_DIR$\..\source\button\hal_button.c</file>
+            <file>$PROJ_DIR$\..\source\button\driver_button.c</file>
+            <file>$PROJ_DIR$\..\source\button\driver_button.h</file>
+            <file>$PROJ_DIR$\..\source\Bootloader\flash.h</file>
+            <file>$PROJ_DIR$\..\source\uart\driver_lpuart.c</file>
+            <file>$PROJ_DIR$\..\source\uart\driver_lpuart.h</file>
+            <file>$PROJ_DIR$\..\source\Bootloader\bootloader.c</file>
+            <file>$PROJ_DIR$\..\source\Bootloader\flash.c</file>
+            <file>$PROJ_DIR$\..\source\MiddleWare\srec\srec.h</file>
+            <file>$PROJ_DIR$\..\source\ClockConfig\clock_config.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$PROJ_DIR$\..\source\manager.h</file>
+            <file>$PROJ_DIR$\..\MKE16Z4\system_MKE16Z4.h</file>
+            <file>$PROJ_DIR$\..\CMSIS\Include\core_cm0plus.h</file>
+            <file>$PROJ_DIR$\..\source\manager.c</file>
+            <file>$PROJ_DIR$\..\MKE16Z4\startup_MKE16Z4.s</file>
+            <file>$PROJ_DIR$\..\MKE16Z4\system_MKE16Z4.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\Bootloader\bootloader.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\main.o</file>
+            <file>$PROJ_DIR$\..\MKE16Z4\fsl_device_registers.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\ClockConfig\clock_config.o</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$PROJ_DIR$\..\CMSIS\Include\cmsis_version.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\uart\driver_lpuart.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\Bootloader\flash.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\MiddleWare\queue\queue.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\button\hal_button.o</file>
+            <file>$TOOLKIT_DIR$\config\linker\NXP\MKE16Z64xxx4.icf</file>
+            <file>$TOOLKIT_DIR$\lib\m6M_tl.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\manager.o</file>
+            <file>$PROJ_DIR$\Debug\Exe\MockProj.srec</file>
+            <file>$PROJ_DIR$\..\CMSIS\Include\cmsis_compiler.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\uart\hal_lpuart.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup\system_MKE16Z4.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\aarch32\iccarm_builtin.h</file>
+            <file>$TOOLKIT_DIR$\lib\rt6M_tl.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$PROJ_DIR$\..\MKE16Z4\MKE16Z4_features.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\button\driver_button.o</file>
+            <file>$PROJ_DIR$\Debug\List\MockProj.map</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+            <file>$PROJ_DIR$\Debug\Exe\MockProj.out</file>
+            <file>$TOOLKIT_DIR$\lib\dl6M_tln.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup\startup_MKE16Z4.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_stdlib.h</file>
+            <file>$PROJ_DIR$\..\CMSIS\Include\cmsis_iccarm.h</file>
+            <file>$PROJ_DIR$\..\MKE16Z4\MKE16Z4.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\MiddleWare\srec\srec.o</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\..\source\ClockConfig\clock_config.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 31</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 20 49 10 35 38 21 36 65 24 33 46 64 51 23</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\MiddleWare\queue\queue.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 40</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 0 6 49 10 35 38 21 36 53 19 58 48 63 16 62</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\MiddleWare\srec\srec.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 66</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 49 10 35 38 21 36 58 48 63 39 57</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\uart\hal_lpuart.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 47</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 4 49 10 35 38 21 36 62 48 65 24 33 46 64 51 23</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 29</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 16 49 10 35 38 21 36 62 48 6 53 13 22 0 19 58 63 8 14</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\button\hal_button.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 41</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 3 49 10 35 38 21 36 65 24 33 46 64 51 23</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\button\driver_button.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 55</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 13 20 49 10 35 38 21 36 3</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\uart\driver_lpuart.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 34</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 16 49 10 35 38 21 36 62 48 6 53 20 4</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\Bootloader\bootloader.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 28</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 8 65 24 49 10 35 38 21 36 33 46 64 51 23</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\Bootloader\flash.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 37</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 65 24 49 10 35 38 21 36 33 46 64 51 23 14</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 56 59</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\manager.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 44</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 22 53 0 6 49 10 35 38 21 36 19 58 48 63 16 62 14</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\MKE16Z4\startup_MKE16Z4.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 61</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\MKE16Z4\system_MKE16Z4.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 50</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 49 10 35 38 21 36 30 65 24 33 46 64 51 23 54</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\MockProj.out</name>
+            <outputs>
+                <tool>
+                    <name>OBJCOPY</name>
+                    <file> 45</file>
+                </tool>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 56</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 42 28 31 55 34 37 41 47 29 44 40 66 61 50 32 52 43 60</file>
+                </tool>
+            </inputs>
+        </file>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>

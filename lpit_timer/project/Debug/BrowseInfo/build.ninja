@@ -1,0 +1,90 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out
+
+rule MAKEBROWSE
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out
+
+rule PDBLINK
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out
+
+
+
+#Build steps
+build D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\clock_config.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\ExampleMKE16\lpit_timer\source\clock_config.c -xcl_file D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\clock_config.xcl -macro_file D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\clock_config.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\ExampleMKE16\lpit_timer\source\clock_config.c -D CPU_MKE16Z64VLF4 -o D$:\ExampleMKE16\lpit_timer\project\Debug\Obj\source --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\ExampleMKE16\lpit_timer\project\..\CMSIS\Include\ -I D$:\ExampleMKE16\lpit_timer\project\..\source\ -I D$:\ExampleMKE16\lpit_timer\project\..\MKE16Z4\ -Ol --predef_macros D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\clock_config.tmp
+  rspfile_name = D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\clock_config.xcl.rsp
+
+build D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\driver_lpit.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\ExampleMKE16\lpit_timer\source\driver_lpit.c -xcl_file D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\driver_lpit.xcl -macro_file D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\driver_lpit.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\ExampleMKE16\lpit_timer\source\driver_lpit.c -D CPU_MKE16Z64VLF4 -o D$:\ExampleMKE16\lpit_timer\project\Debug\Obj\source --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\ExampleMKE16\lpit_timer\project\..\CMSIS\Include\ -I D$:\ExampleMKE16\lpit_timer\project\..\source\ -I D$:\ExampleMKE16\lpit_timer\project\..\MKE16Z4\ -Ol --predef_macros D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\driver_lpit.tmp
+  rspfile_name = D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\driver_lpit.xcl.rsp
+
+build D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\hal_lpit.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\ExampleMKE16\lpit_timer\source\hal_lpit.c -xcl_file D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\hal_lpit.xcl -macro_file D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\hal_lpit.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\ExampleMKE16\lpit_timer\source\hal_lpit.c -D CPU_MKE16Z64VLF4 -o D$:\ExampleMKE16\lpit_timer\project\Debug\Obj\source --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\ExampleMKE16\lpit_timer\project\..\CMSIS\Include\ -I D$:\ExampleMKE16\lpit_timer\project\..\source\ -I D$:\ExampleMKE16\lpit_timer\project\..\MKE16Z4\ -Ol --predef_macros D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\hal_lpit.tmp
+  rspfile_name = D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\hal_lpit.xcl.rsp
+
+build D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\ExampleMKE16\lpit_timer\source\main.c -xcl_file D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\main.xcl -macro_file D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\main.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\ExampleMKE16\lpit_timer\source\main.c -D CPU_MKE16Z64VLF4 -o D$:\ExampleMKE16\lpit_timer\project\Debug\Obj\source --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\ExampleMKE16\lpit_timer\project\..\CMSIS\Include\ -I D$:\ExampleMKE16\lpit_timer\project\..\source\ -I D$:\ExampleMKE16\lpit_timer\project\..\MKE16Z4\ -Ol --predef_macros D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\main.tmp
+  rspfile_name = D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\main.xcl.rsp
+
+build D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\startup\system_MKE16Z4.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\ExampleMKE16\lpit_timer\MKE16Z4\system_MKE16Z4.c -xcl_file D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\startup\system_MKE16Z4.xcl -macro_file D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\startup\system_MKE16Z4.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\ExampleMKE16\lpit_timer\MKE16Z4\system_MKE16Z4.c -D CPU_MKE16Z64VLF4 -o D$:\ExampleMKE16\lpit_timer\project\Debug\Obj\startup --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M0+ -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\ExampleMKE16\lpit_timer\project\..\CMSIS\Include\ -I D$:\ExampleMKE16\lpit_timer\project\..\source\ -I D$:\ExampleMKE16\lpit_timer\project\..\MKE16Z4\ -Ol --predef_macros D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\startup\system_MKE16Z4.tmp
+  rspfile_name = D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\startup\system_MKE16Z4.xcl.rsp
+
+build D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\clock_config.pbi : INDEXER D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\clock_config.xcl |  $
+D$:\ExampleMKE16\lpit_timer\source\clock_config.c
+  flags = -out=D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\clock_config.pbi -f D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\clock_config.xcl
+
+build D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\driver_lpit.pbi : INDEXER D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\driver_lpit.xcl |  $
+D$:\ExampleMKE16\lpit_timer\source\driver_lpit.c
+  flags = -out=D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\driver_lpit.pbi -f D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\driver_lpit.xcl
+
+build D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\hal_lpit.pbi : INDEXER D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\hal_lpit.xcl |  $
+D$:\ExampleMKE16\lpit_timer\source\hal_lpit.c
+  flags = -out=D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\hal_lpit.pbi -f D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\hal_lpit.xcl
+
+build D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\main.pbi : INDEXER D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\main.xcl |  $
+D$:\ExampleMKE16\lpit_timer\source\main.c
+  flags = -out=D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\main.pbi -f D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\main.xcl
+
+build D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\startup\system_MKE16Z4.pbi : INDEXER D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\startup\system_MKE16Z4.xcl |  $
+D$:\ExampleMKE16\lpit_timer\MKE16Z4\system_MKE16Z4.c
+  flags = -out=D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\startup\system_MKE16Z4.pbi -f D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\startup\system_MKE16Z4.xcl
+
+build D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\lpit_timer.pbw : MAKEBROWSE D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\lpit_timer.pbd
+  flags = D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\lpit_timer.pbd -output D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\lpit_timer.pbw
+
+build D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\lpit_timer_part0.pbi : PDBLINK D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\clock_config.pbi |  $
+D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\driver_lpit.pbi
+  flags = -M D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\lpit_timer_part0.pbi D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\clock_config.pbi D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\driver_lpit.pbi
+
+build D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\lpit_timer_part1.pbi : PDBLINK D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\hal_lpit.pbi |  $
+D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\main.pbi
+  flags = -M D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\lpit_timer_part1.pbi D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\hal_lpit.pbi D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\source\main.pbi
+
+build D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\lpit_timer_part2.pbi : PDBLINK D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\startup\system_MKE16Z4.pbi
+  flags = -M D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\lpit_timer_part2.pbi D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\startup\system_MKE16Z4.pbi
+
+build D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\lpit_timer.pbd : PDBLINK D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\lpit_timer_part0.pbi |  $
+D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\lpit_timer_part1.pbi $
+D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\lpit_timer_part2.pbi
+  flags = -M D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\lpit_timer.pbd D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\lpit_timer_part0.pbi D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\lpit_timer_part1.pbi D$:\ExampleMKE16\lpit_timer\project\Debug\BrowseInfo\lpit_timer_part2.pbi
+

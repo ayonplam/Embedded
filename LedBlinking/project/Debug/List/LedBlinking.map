@@ -1,0 +1,317 @@
+###############################################################################
+#
+# IAR ELF Linker V9.32.2.340/W64 for ARM                  22/May/2023  15:24:24
+# Copyright 2007-2023 IAR Systems AB.
+#
+#    Output file  =
+#        D:\ExampleMKE16\LedBlinking\project\Debug\Exe\LedBlinking.out
+#    Map file     =
+#        D:\ExampleMKE16\LedBlinking\project\Debug\List\LedBlinking.map
+#    Command line =
+#        -f D:\ExampleMKE16\LedBlinking\project\Debug\Exe\LedBlinking.out.rsp
+#        (D:\ExampleMKE16\LedBlinking\project\Debug\Obj\source\driver_led_blink.o
+#        D:\ExampleMKE16\LedBlinking\project\Debug\Obj\source\hal_led_blink.o
+#        D:\ExampleMKE16\LedBlinking\project\Debug\Obj\source\main.o
+#        D:\ExampleMKE16\LedBlinking\project\Debug\Obj\startup\startup_MKE16Z4.o
+#        D:\ExampleMKE16\LedBlinking\project\Debug\Obj\startup\system_MKE16Z4.o
+#        --no_out_extension -o
+#        D:\ExampleMKE16\LedBlinking\project\Debug\Exe\LedBlinking.out --map
+#        D:\ExampleMKE16\LedBlinking\project\Debug\List\LedBlinking.map
+#        --config "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.1\arm/config/linker/NXP/MKE16Z64xxx4.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale --cpu=Cortex-M0+
+#        --fpu=None)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because --advanced_heap
+was not specified and the application did not appear to
+be primarily optimized for speed.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x3ff] |
+                [from 0x410 to 0xffff] { ro };
+define block CSTACK with size = 512, alignment = 8 { };
+define block PROC_STACK with size = 0, alignment = 8 { };
+define block HEAP with size = 2K, alignment = 8 { };
+"P2":  place in [from 0x1fff'f800 to 0x1fff'ffff] |
+                [from 0x2000'0000 to 0x2000'17ff] {
+          rw, block CSTACK, block PROC_STACK, block HEAP };
+"P3":  place in [from 0x400 to 0x40f] { section FlashConfig };
+initialize by copy { rw };
+
+  Section            Kind         Address   Size  Object
+  -------            ----         -------   ----  ------
+"A0":                                       0xc0
+  .intvec            ro code          0x0   0xc0  startup_MKE16Z4.o [2]
+                                   - 0xc0   0xc0
+
+"P1", part 1 of 2:                         0x17c
+  .text              ro code         0xc0   0xae  I32DivModFast.o [4]
+  .text              ro code        0x16e    0x2  startup_MKE16Z4.o [2]
+  .text              ro code        0x170   0xb8  hal_led_blink.o [1]
+  Initializer bytes  const          0x228   0x14  <for P2 s0>
+                                  - 0x23c  0x17c
+
+"P3":                                       0x10
+  FlashConfig        ro code        0x400   0x10  startup_MKE16Z4.o [2]
+                                  - 0x410   0x10
+
+"P1", part 2 of 2:                         0x5b4
+  .text              ro code        0x410  0x268  main.o [1]
+  .text              ro code        0x678  0x1b8  driver_led_blink.o [1]
+  .text              ro code        0x830    0x2  IntDivZer.o [4]
+  .text              ro code        0x832    0x2  startup_MKE16Z4.o [2]
+  .text              ro code        0x834   0x50  system_MKE16Z4.o [2]
+  .text              ro code        0x884    0x2  system_MKE16Z4.o [2]
+  .text              ro code        0x886   0x30  copy_init3.o [4]
+  .text              ro code        0x8b6    0x2  startup_MKE16Z4.o [2]
+  .text              ro code        0x8b8   0x28  startup_MKE16Z4.o [2]
+  .text              ro code        0x8e0   0x28  data_init.o [4]
+  .iar.init_table    const          0x908   0x14  - Linker created -
+  .text              ro code        0x91c   0x1e  cmain.o [4]
+  .text              ro code        0x93a    0x4  low_level_init.o [3]
+  .text              ro code        0x93e    0x8  exit.o [3]
+  .text              ro code        0x946    0x2  startup_MKE16Z4.o [2]
+  .text              ro code        0x948    0xa  cexit.o [4]
+  .text              ro code        0x954   0x14  exit.o [5]
+  .text              ro code        0x968   0x1c  cstartup_M.o [4]
+  .text              ro code        0x984    0x8  startup_MKE16Z4.o [2]
+  .text              ro code        0x98c    0x8  startup_MKE16Z4.o [2]
+  .text              ro code        0x994    0x8  startup_MKE16Z4.o [2]
+  .text              ro code        0x99c    0x8  startup_MKE16Z4.o [2]
+  .text              ro code        0x9a4    0x8  startup_MKE16Z4.o [2]
+  .text              ro code        0x9ac    0x8  startup_MKE16Z4.o [2]
+  .text              ro code        0x9b4    0x8  startup_MKE16Z4.o [2]
+  .text              ro code        0x9bc    0x8  startup_MKE16Z4.o [2]
+  .rodata            const          0x9c4    0x0  copy_init3.o [4]
+                                  - 0x9c4  0x5b4
+
+"P2", part 1 of 2:                          0x14
+  P2 s0                       0x1fff'f800   0x14  <Init block>
+    .data            inited   0x1fff'f800    0x4  system_MKE16Z4.o [2]
+    .bss             inited   0x1fff'f804    0x4  main.o [1]
+    .bss             inited   0x1fff'f808    0x4  main.o [1]
+    .bss             inited   0x1fff'f80c    0x4  main.o [1]
+    .bss             inited   0x1fff'f810    0x1  main.o [1]
+                            - 0x1fff'f814   0x14
+
+"P2", part 2 of 2:                         0x200
+  CSTACK                      0x1fff'f818  0x200  <Block>
+    CSTACK           uninit   0x1fff'f818  0x200  <Block tail>
+                            - 0x1fff'fa18  0x200
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+        0x23c        0x3ff   0x1c4
+        0x9c4       0xffff  0xf63c
+  0x1fff'f814  0x1fff'f817     0x4
+  0x1fff'fa18  0x1fff'ffff   0x5e8
+  0x2000'0000  0x2000'17ff  0x1800
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy (__iar_copy_init3)
+    1 source range, total size 0x14 (117% of destination):
+                0x228  0x14
+    1 destination range, total size 0x11:
+          0x1fff'f800  0x11
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module              ro code  ro data  rw data
+    ------              -------  -------  -------
+command line/config:
+    ---------------------------------------------
+    Total:
+
+D:\ExampleMKE16\LedBlinking\project\Debug\Obj\source: [1]
+    driver_led_blink.o      440
+    hal_led_blink.o         184
+    main.o                  616       13       13
+    ---------------------------------------------
+    Total:                1'240       13       13
+
+D:\ExampleMKE16\LedBlinking\project\Debug\Obj\startup: [2]
+    startup_MKE16Z4.o       320
+    system_MKE16Z4.o         82        4        4
+    ---------------------------------------------
+    Total:                  402        4        4
+
+dl6M_tln.a: [3]
+    exit.o                    8
+    low_level_init.o          4
+    ---------------------------------------------
+    Total:                   12
+
+rt6M_tl.a: [4]
+    I32DivModFast.o         174
+    IntDivZer.o               2
+    cexit.o                  10
+    cmain.o                  30
+    copy_init3.o             48
+    cstartup_M.o             28
+    data_init.o              40
+    ---------------------------------------------
+    Total:                  332
+
+shb_l.a: [5]
+    exit.o                   20
+    ---------------------------------------------
+    Total:                   20
+
+    Gaps                      2
+    Linker created                    23      512
+-------------------------------------------------
+    Grand Total:          2'008       40      529
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base         0x908          --   Gb  - Linker created -
+.iar.init_table$$Limit        0x91c          --   Gb  - Linker created -
+?main                         0x91d         Code  Gb  cmain.o [4]
+ADC0_IRQHandler               0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+CMP0_IRQHandler               0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+CSTACK$$Base            0x1fff'f818          --   Gb  - Linker created -
+CSTACK$$Limit           0x1fff'fa18          --   Gb  - Linker created -
+DefaultISR                    0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+DelayLed                      0x811   0x20  Code  Gb  driver_led_blink.o [1]
+FTFA_IRQHandler               0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+FTM0_IRQHandler               0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+FTM1_IRQHandler               0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+GPIO_SetPin                   0x209   0x20  Code  Gb  hal_led_blink.o [1]
+GPIO_SetPinInput              0x1fd    0xc  Code  Gb  hal_led_blink.o [1]
+GPIO_SetPinOutput             0x1f1    0xc  Code  Gb  hal_led_blink.o [1]
+HardFault_Handler             0x833         Code  Wk  startup_MKE16Z4.o [2]
+LPI2C0_DriverIRQHandler
+                              0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+LPI2C0_IRQHandler             0x985         Code  Wk  startup_MKE16Z4.o [2]
+LPIT0_IRQHandler              0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+LPSPI0_DriverIRQHandler
+                              0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+LPSPI0_IRQHandler             0x98d         Code  Wk  startup_MKE16Z4.o [2]
+LPUART0_DriverIRQHandler
+                              0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+LPUART0_IRQHandler            0x995         Code  Wk  startup_MKE16Z4.o [2]
+LPUART1_DriverIRQHandler
+                              0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+LPUART1_IRQHandler            0x99d         Code  Wk  startup_MKE16Z4.o [2]
+LPUART2_DriverIRQHandler
+                              0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+LPUART2_IRQHandler            0x9a5         Code  Wk  startup_MKE16Z4.o [2]
+LVD_LVW_IRQHandler            0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+MSCAN_DriverIRQHandler        0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+MSCAN_ORed_IRQHandler         0x9b5         Code  Wk  startup_MKE16Z4.o [2]
+MSCAN_Rx_IRQHandler           0x9ad         Code  Wk  startup_MKE16Z4.o [2]
+NMI_Handler                   0x16f         Code  Wk  startup_MKE16Z4.o [2]
+PDB0_IRQHandler               0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+PORTAE_IRQHandler             0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+PORTBCD_IRQHandler            0x613   0x24  Code  Gb  main.o [1]
+PORT_SetPinInterruptConfig
+                              0x1d1   0x20  Code  Gb  hal_led_blink.o [1]
+PWT_LPTMR0_IRQHandler         0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+PendSV_Handler                0x947         Code  Wk  startup_MKE16Z4.o [2]
+Port_ClockEnable              0x171   0x12  Code  Gb  hal_led_blink.o [1]
+Port_SetPinMux                0x189   0x20  Code  Gb  hal_led_blink.o [1]
+Port_SetPinPull_Up            0x1a9   0x28  Code  Gb  hal_led_blink.o [1]
+RTC_IRQHandler                0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+Region$$Table$$Base           0x908          --   Gb  - Linker created -
+Region$$Table$$Limit          0x91c          --   Gb  - Linker created -
+Reserved16_IRQHandler         0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+Reserved17_IRQHandler         0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+Reserved18_IRQHandler         0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+Reserved19_IRQHandler         0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+Reserved20_IRQHandler         0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+Reserved25_IRQHandler         0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+Reserved27_IRQHandler         0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+Reserved35_IRQHandler         0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+Reserved37_IRQHandler         0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+Reserved39_IRQHandler         0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+Reset_Handler                 0x8b9         Code  Wk  startup_MKE16Z4.o [2]
+SCG_RCM_IRQHandler            0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+SVC_Handler                   0x8b7         Code  Wk  startup_MKE16Z4.o [2]
+ShowLed                       0x6f3   0xb4  Code  Gb  driver_led_blink.o [1]
+SysTick_Config                0x4b3   0x30  Code  Lc  main.o [1]
+SysTick_Handler               0x601   0x12  Code  Gb  main.o [1]
+SystemCoreClock         0x1fff'f800    0x4  Data  Gb  system_MKE16Z4.o [2]
+SystemInit                    0x835   0x34  Code  Gb  system_MKE16Z4.o [2]
+SystemInitHook                0x885    0x2  Code  Wk  system_MKE16Z4.o [2]
+TSI_IRQHandler                0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+WDOG_EWM_IRQHandler           0x9bd         Code  Wk  startup_MKE16Z4.o [2]
+__NVIC_ClearPendingIRQ        0x429   0x18  Code  Lc  main.o [1]
+__NVIC_EnableIRQ              0x411   0x18  Code  Lc  main.o [1]
+__NVIC_SetPriority            0x441   0x72  Code  Lc  main.o [1]
+__Vectors                       0x0          --   Gb  startup_MKE16Z4.o [2]
+__Vectors_End                  0xc0         Data  Gb  startup_MKE16Z4.o [2]
+__Vectors_Size {Abs}           0xc0          --   Gb  startup_MKE16Z4.o [2]
+__aeabi_idiv0                 0x831         Code  Gb  IntDivZer.o [4]
+__aeabi_uidiv                  0xc1         Code  Gb  I32DivModFast.o [4]
+__aeabi_uidivmod               0xc1         Code  Gb  I32DivModFast.o [4]
+__cmain                       0x91d         Code  Gb  cmain.o [4]
+__exit                        0x955   0x14  Code  Gb  exit.o [5]
+__iar_copy_init3              0x887   0x30  Code  Gb  copy_init3.o [4]
+__iar_data_init3              0x8e1   0x28  Code  Gb  data_init.o [4]
+__iar_program_start           0x969         Code  Gb  cstartup_M.o [4]
+__low_level_init              0x93b    0x4  Code  Gb  low_level_init.o [3]
+__vector_table                  0x0         Data  Gb  startup_MKE16Z4.o [2]
+__vector_table_0x1c            0x1c         Data  Gb  startup_MKE16Z4.o [2]
+_call_main                    0x929         Code  Gb  cmain.o [4]
+_exit                         0x949         Code  Gb  cexit.o [4]
+exit                          0x93f    0x8  Code  Gb  exit.o [3]
+g_btnIsPressed          0x1fff'f810    0x1  Data  Gb  main.o [1]
+g_sysTickCounter        0x1fff'f804    0x4  Data  Gb  main.o [1]
+initBtn_SW3                   0x6c3   0x30  Code  Gb  driver_led_blink.o [1]
+initLedRGB                    0x679   0x4a  Code  Gb  driver_led_blink.o [1]
+main                          0x4e3  0x11e  Code  Gb  main.o [1]
+mode                    0x1fff'f808    0x4  Data  Gb  main.o [1]
+myRGB                   0x1fff'f80c    0x4  Data  Gb  main.o [1]
+turnOffLed                    0x7c1   0x50  Code  Gb  driver_led_blink.o [1]
+
+
+[1] = D:\ExampleMKE16\LedBlinking\project\Debug\Obj\source
+[2] = D:\ExampleMKE16\LedBlinking\project\Debug\Obj\startup
+[3] = dl6M_tln.a
+[4] = rt6M_tl.a
+[5] = shb_l.a
+
+  2'008 bytes of readonly  code memory
+     40 bytes of readonly  data memory
+    529 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
