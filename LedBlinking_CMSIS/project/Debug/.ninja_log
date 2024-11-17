@@ -1,0 +1,16 @@
+# ninja log v5
+0	33	7059113333673953	D:/ExampleMKE16/LedBlinking/project/Debug/Obj/startup/startup_MKE16Z4.o	edaa0efe043d4cfe
+34	300	7059113336262856	D:/ExampleMKE16/LedBlinking/project/Debug/Obj/startup/system_MKE16Z4.o	40a92ecf76119018
+134	217	7059115856830258	D:/ExampleMKE16/LedBlinking/project/Debug/Exe/LedBlinking.out	2debdb1151c3d362
+11	131	7059115855944559	D:/ExampleMKE16/LedBlinking/project/Debug/Obj/source/main.o	9dbe0d0b1a642dce
+4	124	7059115855795498	D:/ExampleMKE16/LedBlinking/project/Debug/Obj/source/driver_led_blink.o	c2a15c43807f71ab
+10	278	7059113336051969	D:/ExampleMKE16/LedBlinking/project/Debug/Obj/source/hal_led_blink.o	ac96ef81992579c
+2	249	7059116372318564	D:/ExampleMKE16/LedBlinking/project/Debug/Obj/source/driver_led_blink.o	c2a15c43807f71ab
+269	344	7059116373281064	D:/ExampleMKE16/LedBlinking/project/Debug/Exe/LedBlinking.out	2debdb1151c3d362
+2	125	7059116975867027	D:/ExampleMKE16/LedBlinking/project/Debug/Obj/source/driver_led_blink.o	c2a15c43807f71ab
+127	167	7059116976294277	D:/ExampleMKE16/LedBlinking/project/Debug/Exe/LedBlinking.out	2debdb1151c3d362
+10	108	7059117754792268	D:/ExampleMKE16/LedBlinking/project/Debug/Obj/source/driver_led_blink.o	c2a15c43807f71ab
+4	109	7059117754803158	D:/ExampleMKE16/LedBlinking/project/Debug/Obj/source/hal_led_blink.o	ac96ef81992579c
+111	152	7059117755141328	D:/ExampleMKE16/LedBlinking/project/Debug/Exe/LedBlinking.out	2debdb1151c3d362
+2	102	7059118447977901	D:/ExampleMKE16/LedBlinking/project/Debug/Obj/source/hal_led_blink.o	ac96ef81992579c
+104	144	7059118448339057	D:/ExampleMKE16/LedBlinking/project/Debug/Exe/LedBlinking.out	2debdb1151c3d362

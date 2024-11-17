@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>5</fileVersion>
+    <fileChecksum>700209085</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$PROJ_DIR$\Debug\List\LedBlinking.map</file>
+            <file>$TOOLKIT_DIR$\lib\dl6M_tln.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$PROJ_DIR$\..\CMSIS\Include\cmsis_version.h</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\driver_led_blink.o</file>
+            <file>$PROJ_DIR$\..\MKE16Z4\system_MKE16Z4.c</file>
+            <file>$PROJ_DIR$\..\MKE16Z4\system_MKE16Z4.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\main.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\aarch32\iccarm_builtin.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\..\MKE16Z4\startup_MKE16Z4.s</file>
+            <file>$PROJ_DIR$\..\MKE16Z4\MKE16Z4_features.h</file>
+            <file>$PROJ_DIR$\..\MKE16Z4\MKE16Z4.h</file>
+            <file>$TOOLKIT_DIR$\lib\m6M_tl.a</file>
+            <file>$PROJ_DIR$\..\CMSIS\Include\cmsis_compiler.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$PROJ_DIR$\Debug\Exe\LedBlinking.out</file>
+            <file>$TOOLKIT_DIR$\config\linker\NXP\MKE16Z64xxx4.icf</file>
+            <file>$TOOLKIT_DIR$\lib\rt6M_tl.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$PROJ_DIR$\..\MKE16Z4\fsl_device_registers.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup\startup_MKE16Z4.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\hal_led_blink.o</file>
+            <file>$PROJ_DIR$\..\CMSIS\Include\core_cm0plus.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup\system_MKE16Z4.o</file>
+            <file>$PROJ_DIR$\..\CMSIS\Include\cmsis_iccarm.h</file>
+            <file>$PROJ_DIR$\..\source\driver_led_blink.h</file>
+            <file>$PROJ_DIR$\..\source\hal_led_blink.c</file>
+            <file>$PROJ_DIR$\..\source\hal_led_blink.h</file>
+            <file>$PROJ_DIR$\..\source\main.c</file>
+            <file>$PROJ_DIR$\..\source\driver_led_blink.c</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\..\MKE16Z4\system_MKE16Z4.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 27</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 17 21 3 26 0 11 22 14 25 4 16 28 10 8 13</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\MKE16Z4\startup_MKE16Z4.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 23</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\LedBlinking.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 1</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 19 6 24 9 23 27 5 20 15 2</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 18 1</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\hal_led_blink.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 24</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 31 14 25 17 21 3 26 0 11 4 16 28 10 8</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 9</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 29 31 14 25 17 21 3 26 0 11 4 16 28 10 8</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\driver_led_blink.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 6</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 29 31 14 25 17 21 3 26 0 11 4 16 28 10 8</file>
+                </tool>
+            </inputs>
+        </file>
+        <forcedrebuild>
+            <name>[REBUILD_ALL]</name>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>
